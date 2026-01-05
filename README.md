@@ -29,12 +29,13 @@ Para visualizar o projeto localmente, siga as instruções abaixo:
 	```bash
    git clone https://github.com/Isadora-Lopes-Santos/Projeto_Portfolio.git
 ```
-2. Abra o projeto no Visual Studio Code:
-   ```bash
-   code Projeto_Portfolio
+2.Abra o projeto no Visual Studio Code:
+
+       code Projeto_Portfolio
 ```
-3. No VSCode, abra um arquivo HTML do projeto (ex: `index.html`).
-4. Clique com o botão direito no editor e selecione **"Open with Live Server"**.  
+
+4. No VSCode, abra um arquivo HTML do projeto (ex: `index.html`).
+5. Clique com o botão direito no editor e selecione **"Open with Live Server"**.  
    - Alternativamente, você pode iniciar o **Live Server** através da barra de status do VSCode.
 
 Isso abrirá o site em seu navegador padrão, e você poderá visualizar e testar as alterações em tempo real.
