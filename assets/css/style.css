@@ -1,0 +1,217 @@
+/* Seletor UNIVERSAL do CSS */
+/* Reset e Variáveis */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* corresponde ao elemento raiz do documento. Para criarmos todas as variáveis com escopo global */
+:root {
+    --purple-200: #9a7bd1;
+    --purple-500: #6b36c8;
+    --purple-800: #441f88;
+    --black-800: #171717;
+    --gray-200: #cccccc;
+    --white: #f9f9f9;
+}
+
+/* Utilizamos o seletor body, que seleciona o elemento body da página e aplica as propriedades CSS. */
+body {
+    background: var(--gray-200);
+    color: var(--black-800);
+    font-family: sans-serif;
+}
+
+/* Títulos e textos */
+h1, h2, h3 {
+    font-weight: 700; /* aplica a formatação bold (NEGRITO) ao texto */
+}
+h1 {
+    color: var(--white);
+    font-size: 2rem; /* define o tamanho da fonte em rem, equivalente a 32px no navegador padrão */
+}
+h2 {
+    color: var(--black-800);
+    font-size: 1.5rem; /* define o tamanho da fonte em rem, equivalente a 24px no navegador padrão */
+    padding: 1rem 0; /* cria espaçamentos internos ao redor do conteúdo do elemento. Neste caso, define o espaçamento superior e inferior como 1rem (16px) */
+    font-weight: 600; /* aplica a formatação semi-bold (seminegrito) ao texto */
+}
+h3 {
+    color: var(--white);
+    font-size: 1rem;
+    text-align: center;
+}
+p {
+    font-size: 1rem;
+    line-height: 1.5rem; /* define a altura da linha, configurada para 1.5rem (24px) */
+    text-align: justify;
+}
+
+/* Seções Gerais */
+section {
+    width: 90%; /* define a largura do elemento */
+    margin: 2rem auto; /* define as margens externas do elemento: 1rem para as margens superior e inferior, e 2rem para as margens esquerda e direita */
+}
+
+/* Header e Menu */
+header {
+    background: var(--purple-800);
+    padding: 1rem 2rem;
+    display: flex; /* transforma o container em um elemento flexível, permitindo controlar o posicionamento dos elementos internos. O valor flex indica que o contêiner se comportará como um elemento de nível de bloco, ocupando toda a largura disponível */
+    justify-content: space-between; /* define o alinhamento horizontal dos itens flexíveis no container. O valor space-between distribui os elementos de forma que o primeiro fique na extremidade esquerda e o último na extremidade direita */
+    align-items: center;
+    position: sticky; /* position determina como o elemento será posicionado na página. No projeto, utilizamos sticky, que permite que o cabeçalho permaneça visível enquanto o conteúdo rola por baixo dele */
+    top: 0; /* top: 0 -> posiciona o cabeçalho no topo da página (body), sem qualquer espaçamento */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem; /* gap -> define o espaçamento uniforme entre os itens do container flexível */
+}
+
+nav a {
+    color: var(--white);
+    font-size: 1.1rem;
+    text-decoration: none; /* remove o sublinhado dos links */
+}
+
+nav a:hover { /* aplica estilos quando o cursor do mouse passa sobre os links (<a>) dentro da seção nav */
+    color: var(--purple-200);
+    text-decoration: underline; /* ativa o sublinhado dos links ao parar o mouse sobre o link */
+}
+
+/* About */
+#about article {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+#about img { /* aplicando estilos a todos os elementos <img> que estejam dentro da seção com o id="about" */
+    width: 200px;
+    flex-shrink: 0; /* controla quanto o elemento pode encolher em relação aos outros itens dentro de um container flexível quando o espaço disponível é reduzido. O valor 0 impede o elemento de encolher, mantendo seu tamanho original, enquanto um valor 1 (padrão) permite que ele diminua proporcionalmente conforme o espaço é limitado */
+}
+
+#about p {
+    flex: 1; /* flex: 1 -> para o elemento, que é uma forma abreviada de definir flex-grow, flex-shrink e flex-basis ao mesmo tempo. Neste caso flex: 1 equivale a flex-grow: 1; flex-shrink: 1; flex-basis: 0;, fazendo com que o elemento cresça e encolha proporcionalmente */
+}
+
+/* Vídeo */
+#video figure { /* #video figure, aplicando estilos a todos os elementos <figure> que estejam dentro da seção com o atributo id="video" */
+    display: flex; /* Com essa configuração, o elemento <figure> passa a se comportar como um bloco flexível, ocupando toda a largura disponível no container pai */ 
+    justify-content: center; /* alinha os itens flexíveis no eixo principal do container flexível. No caso, a opção center centraliza horizontalmente todo o conteúdo dentro do <figure> */
+}
+
+/* Footers */
+footer {
+    flex-direction: column; /* organiza elementos em coluna */
+    align-items: center; /* centraliza horizontalmente */
+    justify-content: center; /* centraliza verticalmente */
+    padding: 1rem; /* define espaçamento interno de 16px */
+    color: var(--white);
+    background-color: var(--purple-500);
+    font-weight: bold; /* aplica negrito */
+    text-align: center;
+}
+
+footer section {
+    width: 100%; /* faz a seção ocupar toda a largura disponível */
+    display: flex; /* aplica layout flexível */
+    justify-content: center;
+    align-items: center;
+    gap: 1rem; /* cria espaçamento de 16px entre itens */
+    margin: 1rem 0; /* aplica margens de 16px no topo e embaixo */
+}
+
+footer img { /* seleciona imagens dentro do rodapé */
+    width: 2rem;
+    height: 2rem;
+    display: block; /* remove o espaço embaixo da imagem (causado pelo comportamento inline padrão) */
+    transition: filter 0.3s; /* define uma transição suave de 0,3 segundos para mudanças no filtro. */
+}
+
+footer img:hover { /* Utilizamos o seletor "footer img:hover", que aplica estilos quando o mouse passa sobre as imagens do rodapé. */
+    /* aplicar múltiplos efeitos visuais */
+    filter: brightness(0)
+            saturate(100%)
+            invert(65%)
+            sepia(59%)
+            saturate(2437%)
+            hue-rotate(213deg)
+            brightness(86%)
+            contrast(88%);
+}
+
+/* Página Contato */
+.main_contato {
+    display: grid; /* organiza o layout em formato de grade */
+    grid-template-columns: 1fr 1fr; /* divide a área em duas colunas iguais */
+    gap: 2rem; /* cria espaçamento de 2rem (32px) entre os elementos da grade */
+    width: 90%; /* define a largura total do container */
+    margin: 2rem auto; /* centraliza horizontalmente e adiciona margens verticais */
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 1.5rem;
+    border-radius: 0.75rem; /* arredonda os cantos do formulário (12px) */
+}
+
+form input, textarea { /* seleciona todos os campos de entrada e áreas de texto dentro de formulários. */
+    padding: 0.5rem;
+    border-radius: 0.75rem;
+    border: none; /* remove bordas visíveis dos campos */
+    font-size: 1rem;
+}
+
+textarea {
+    resize: none; /* desabilita o redimensionamento manual da área de texto */
+    height: 5rem; /* define altura fixa de 80px */
+}
+
+form button {
+    background: var(--purple-800);
+    color: var(--white);
+    padding: 0.75rem;
+    border: 1px solid var(--purple-500);
+    border-radius: 0.75rem; /* arredonda os cantos do botão */
+    font-weight: 700; /* deixa o texto em negrito */
+    cursor: pointer; /* muda o cursor para mãozinha ao passar o mouse */
+}
+
+form button:hover { /* aplica estilos quando o mouse passa sobre o botão */
+    background: var(--purple-500);
+}
+
+form span{ /* seleciona os elementos <span> dentro de formulários. */
+    color: #ff0000;
+    font-size: 0.75rem;
+}
+
+/* Mapa da Página */
+.article_mapa { /*  classe article_mapa */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    background: var(--white);
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+}
+
+.article_mapa address { /* seleciona o elemento <address> dentro da classe .article_mapa */
+    width: 75%;
+}
+
+.article_mapa address p { /*  seleciona parágrafos dentro de <address> na classe .article_mapa */
+    font-weight: 600;
+}
+
+.article_mapa iframe { /* seleciona o mapa incorporado */
+    align-self: center; /* centraliza o iframe individualmente dentro do contêiner */
+}
